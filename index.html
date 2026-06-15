@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Taslim 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#faf8f2;
+color:#222;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:50px 20px;
+}
+
+.card{
+max-width:900px;
+width:100%;
+background:white;
+border-radius:25px;
+padding:25px;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
+text-align:center;
+}
+
+img{
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:4rem;
+color:#b8860b;
+}
+
+.hero p{
+margin-top:15px;
+font-size:1.2rem;
+}
+
+.scroll{
+margin-top:40px;
+font-size:2rem;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(10px);}
+}
+
+.message{
+font-size:1.3rem;
+line-height:1.8;
+}
+
+.lock-box{
+display:flex;
+flex-direction:column;
+gap:15px;
+align-items:center;
+}
+
+input{
+padding:12px;
+width:250px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#d4af37;
+color:white;
+cursor:pointer;
+font-size:1rem;
+}
+
+button:hover{
+opacity:.9;
+}
+
+#finalSection{
+display:none;
+animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+#confetti{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.confetti-piece{
+position:absolute;
+font-size:20px;
+animation:fall 5s linear forwards;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px) rotate(0);
+}
+100%{
+transform:translateY(120vh) rotate(720deg);
+}
+}
+
+footer{
+padding:40px;
+text-align:center;
+font-size:1rem;
+color:#666;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.message{
+font-size:1.05rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+
+<div class="hero">
+
+<h1>Happy Birthday Taslim 🎂</h1>
+
+<p>A small birthday surprise made just for you.</p>
+
+<div class="scroll">↓</div>
+
+</div>
+
+</section>
+
+<section>
+<div class="card">
+
+<img src="images/photo2.jpg">
+
+<div class="message">
+
+<h2>Official Character Traits</h2>
+
+<br>
+
+Smart ✔<br>
+Kind ✔<br>
+Funny ✔<br>
+Pretends not to be stubborn ✔
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="card">
+
+<img src="images/photo1.jpg">
+
+<div class="message">
+
+<h2>Debugging Status</h2>
+
+<br>
+
+Can solve life's problems.<br>
+Can solve work problems.<br>
+Still can't decides what to eat after looking at the menu for 20 minutes.
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="card">
+
+<img src="images/photo3.jpg">
+
+<div class="message">
+
+<h2>Birthday Objectives</h2>
+
+<br>
+
+Eat good food ✔<br>
+Take lots of photos ✔<br>
+Have an amazing day ✔<br>
+Reply to messages eventually... maybe ✔
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="card">
+
+<img src="images/photo4.jpg">
+
+<div class="message">
+
+<h2>Achievement Unlocked</h2>
+
+<br>
+
+Another year completed.<br>
+New adventures available.<br>
+New memories loading...
+
+</div>
+
+</div>
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>Restricted Photo 🔒</h2>
+
+<br>
+
+<p>Hint: Ask me 😉</p>
+
+<br>
+
+<div class="lock-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button onclick="unlock()">
+Unlock Surprise
+</button>
+
+<p id="error"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="finalSection">
+
+<div class="card">
+
+<img src="images/hero.jpg">
+
+<div class="message">
+
+<h2>Access Granted 🎉</h2>
+
+<br>
+
+Thank you for taking the time to go through this little birthday surprise.
+
+<br><br>
+
+Wishing you a year full of happiness,
+great memories,
+new adventures,
+and countless reasons to smile.
+
+<br><br>
+
+Happy Birthday, Taslim.
+
+</div>
+
+</div>
+
+</section>
+
+<div id="confetti"></div>
+
+<footer>
+
+Made with ☕ and last-minute coding skills
+
+</footer>
+
+<script>
+
+function unlock(){
+
+const pass=document.getElementById("password").value;
+
+if(pass==="sun@moon$1"){
+
+document.getElementById("finalSection").style.display="flex";
+
+launchConfetti();
+
+document.getElementById("finalSection")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}else{
+
+document.getElementById("error").innerHTML=
+"Wrong password 👀";
+
+}
+
+}
+
+function launchConfetti(){
+
+for(let i=0;i<120;i++){
+
+let piece=document.createElement("div");
+
+piece.className="confetti-piece";
+
+piece.innerHTML=["🎉","✨","🎊","⭐"][Math.floor(Math.random()*4)];
+
+piece.style.left=Math.random()*100+"vw";
+
+piece.style.animationDuration=
+(3+Math.random()*3)+"s";
+
+document.getElementById("confetti")
+.appendChild(piece);
+
+setTimeout(()=>{
+piece.remove();
+},6000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
